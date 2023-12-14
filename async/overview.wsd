@@ -1,0 +1,32 @@
+@startuml
+scale 4000 width
+
+class Generator {
+    prototype
+}
+
+class GeneratorFunction {
+    prototype
+}
+
+class IteratorPrototype
+
+class GeneratorFunctionPrototype {
+    prototype
+}
+
+class Gp {
+    constructor
+}
+Gp::constructor -left- GeneratorFunctionPrototype
+
+Gp <|--* IteratorPrototype
+
+Generator::prototype -left- Gp
+GeneratorFunction::prototype -- GeneratorFunctionPrototype
+GeneratorFunctionPrototype::prototype -right- Gp
+
+
+Car *-- Wheel : has 4 >
+Car -- Owner : < owns
+@enduml
