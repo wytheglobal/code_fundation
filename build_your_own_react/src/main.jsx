@@ -9,7 +9,20 @@ function Counter() {
     </h1>
   )
 }
-const element = <Counter />
+
+function Counter2() {
+  const [state, setState] = Didact.useState(1)
+  return (
+    <h1 onClick={() => setState(c => c + 1)}>
+      Count: {state}
+    </h1>
+  )
+}
+
+const element = <div>
+  <Counter />
+  <Counter2 />
+</div>
 const container = document.getElementById("root")
 Didact.render(element, container)
 
